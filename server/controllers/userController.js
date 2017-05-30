@@ -35,7 +35,7 @@ var isValidPassword = function (data, cb) {
     db.user.find({
         username: data.username,
         password: data.password
-    }, function (err, res) {        
+    }, function (err, res) {
         if (res.length > 0) {
             cb(false);
         } else {

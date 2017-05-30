@@ -13,25 +13,24 @@ $('.form').find('input, textarea').on('keyup blur focus', function (e) {
             label.addClass('active highlight');
         }
     } else if (e.type === 'blur') {
-        if( $this.val() === '' ) {
+        if ($this.val() === '') {
             label.removeClass('active highlight');
         } else {
             label.removeClass('highlight');
         }
     } else if (e.type === 'focus') {
 
-        if( $this.val() === '' ) {
+        if ($this.val() === '') {
             label.removeClass('highlight');
-        }
-        else if( $this.val() !== '' ) {
+        } else if ($this.val() !== '') {
             label.addClass('highlight');
         }
     }
 
 });
 
-$('.form').submit(function(evt){
-     evt.preventDefault();
+$('.form').submit(function (evt) {
+    evt.preventDefault();
 });
 
 $('.tab a').on('click', function (e) {
