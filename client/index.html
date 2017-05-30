@@ -1,0 +1,141 @@
+<link rel="stylesheet" href="client/stylesheets/style.css">
+<div id="signDiv">
+
+    <ul class="tab-group">
+        <li class="tab active"><a href="#signup">Sign Up</a></li>
+        <li class="tab"><a href="#login">Log In</a></li>
+    </ul>
+    <div class="tab-content">
+        <div id="signup">
+            <h1>Kostenlos anmelden</h1>
+
+            <form action="/" method="post">
+
+                <div class="top-row">
+                    <div class="field-wrap">
+                        <label>
+                            Vorname<span class="req">*</span>
+                        </label>
+                        <input id="signDiv-firstname" type="text" required autocomplete="off"/><br>
+                    </div>
+
+                    <div class="field-wrap">
+                        <label>
+                            Nachname<span class="req">*</span>
+                        </label>
+                        <input id="signDiv-lastname" type="text" required autocomplete="off"/>
+                    </div>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Username<span class="req">*</span>
+                    </label>
+                    <input id="signDiv-username" type="text" required autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Dein Password<span class="req">*</span>
+                    </label>
+                    <input id="signDiv-password" type="password" required autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        E-Mail<span class="req">*</span>
+                    </label>
+                    <input id="signDiv-email" type="email" required autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Geburtsdatum<span class="req">*</span>
+                    </label>
+                    <input id="signDiv-birthdate" type="date" required autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Straße<span class="req">*</span>
+                    </label>
+                    <input id="signDiv-street" type="date" required autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Hausnummer<span class="req">*</span>
+                    </label>
+                    <input id="signDiv-number" type="date" required autocomplete="off"/>
+                </div>
+                <div class="field-wrap">
+                    <label>
+                        PLZ<span class="req">*</span>
+                    </label>
+                    <input id="signDiv-zipcode" type="date" required autocomplete="off"/>
+                </div>
+                <div class="field-wrap">
+                    <label>
+                        Stadt<span class="req">*</span>
+                    </label>
+                    <input id="signDiv-city" type="date" required autocomplete="off"/>
+                </div>
+                <div class="field-wrap">
+                    <label>
+                        Land<span class="req">*</span>
+                    </label>
+                    <input id="signDiv-country" type="date" required autocomplete="off"/>
+                </div>
+                <button id="signDiv-signUp" type="submit" class="button button-block">
+                    Get Started
+                </button>
+
+            </form>
+        </div>
+        <div id="login">
+            <h1>Welcome Back!</h1>
+
+            <form action="/" method="post">
+
+                <div class="field-wrap">
+                    <label>
+                        Username<span class="req">*</span>
+                    </label>
+                    <input id="loginDiv-username" type="text" required autocomplete="off"/>
+                </div>
+
+                <div class="field-wrap">
+                    <label>
+                        Password<span class="req">*</span>
+                    </label>
+                    <input id="loginDiv-password" type="password" required autocomplete="off"/>
+                </div>
+
+                <p class="forgot"><a href="#">Forgot Password?</a></p>
+                <button id="signDiv-signIn" class="button button-block">
+                Log In</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="gameDiv" style="display:none;">
+    <!--<div id="game" style="position:absolute; width:500px; height: 500px;">
+        <canvas id="ctx" width="500" height="500" style="position:absolute;border:1px solid #000;"></canvas>
+        <canvas id="ctx-ui" width="500" height="500" style="position:absolute; border:1px solid #000;"></canvas>
+    </div>-->
+    <div id="belowGame" style="margin-top:520px;">
+        <p>Use w, a, s, d to move</p>
+        <div id="chat-text" style="width: 500px; height:100px; overflow-y:scroll">
+            <div>Hello!</div>
+        </div>
+        <form id="chat-form">
+            <input id="chat-input" type="text" style="width:500px"/>
+        </form>
+    </div>
+
+</div>
+
+<script src="client/javascripts/socket-io.js"></script>
+<script src="client/javascripts/login.js"></script>
+<script src="client/javascripts/login-form.style.js"></script>
