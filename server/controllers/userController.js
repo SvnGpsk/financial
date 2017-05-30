@@ -21,15 +21,25 @@ UserController.prototype.register = function (data, cb) {
     });
 };
 
+UserController.prototype.login = function (data, cb) {
+    isValidPassword(data, function (res) {
+        if (res) {
+            cb(true);
+        } else {
+            cb(false);
+        }
+    });
+};
+
 var isValidPassword = function (data, cb) {
     db.user.find({
         username: data.username,
         password: data.password
-    }, function (err, res) {
+    }, function (err, res) {        
         if (res.length > 0) {
-            cb(true);
+            cb(false);
         } else {
-            cb(false)
+            cb(true);
         }
     })
 };

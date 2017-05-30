@@ -30,6 +30,10 @@ $('.form').find('input, textarea').on('keyup blur focus', function (e) {
 
 });
 
+$('.form').submit(function(evt){
+     evt.preventDefault();
+});
+
 $('.tab a').on('click', function (e) {
 
     e.preventDefault();

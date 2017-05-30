@@ -35,6 +35,17 @@ io.sockets.on('connection', function (socket) {
 
 
     socket.on('signIn', function (data) {
+        UserController.prototype.login(data, function (res) {
+            if (res) {
+                socket.emit('signInResponse', {
+                    success: false
+                });
+            } else {
+                socket.emit('signInResponse', {
+                    success: true
+                });
+            }
+        });
     });
 
     socket.on('disconnect', function () {

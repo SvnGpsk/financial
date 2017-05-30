@@ -1,7 +1,7 @@
 /**
  * Created by haspa on 20.04.17.
  */
-    //sign
+//sign
 var socket = io();
 var WIDTH = 500;
 var HEIGHT = 500;
@@ -20,16 +20,16 @@ var signDivCity = document.getElementById('signDiv-city');
 var signDivCountry = document.getElementById('signDiv-country');
 var signDivPassword = document.getElementById('signDiv-password');
 var signDivEmail = document.getElementById('signDiv-email');
-
+var loginDivUsername = document.getElementById('loginDiv-username');
+var loginDivPassword = document.getElementById('loginDiv-password');
 var gameDiv = document.getElementById('gameDiv');
 
-signDivSignIn.onclick = function () {
-    socket.emit('signIn', (
-    {
-        username: signDivUsername.value,
-        password: signDivPassword.value
-    }
-    ));
+signDivSignIn.onclick = function (e) {
+    e.preventDefault();
+    socket.emit('signIn', ({
+        username: loginDivUsername.value,
+        password: loginDivPassword.value
+    }));
 };
 
 socket.on('signInResponse', function (data) {
@@ -41,24 +41,23 @@ socket.on('signInResponse', function (data) {
     }
 });
 
-signDivSignUp.onclick = function () {
-    socket.emit('signUp', (
-        {
-            username: signDivUsername.value,
-            password: signDivPassword.value,
-            email: signDivEmail.value,
-            firstname: signDivEmail.value,
-            lastname: signDivEmail.value,
-            birthdate: signDivBirthdate.value,
-            address: {
-                street: signDivStreet.value,
-                number: signDivNumber.value,
-                zipcode: signDivZipcode.value,
-                city: signDivCity.value,
-                country: signDivCountry.value
-            }
+signDivSignUp.onclick = function (e) {
+    e.preventDefault();
+    socket.emit('signUp', ({
+        username: signDivUsername.value,
+        password: signDivPassword.value,
+        email: signDivEmail.value,
+        firstname: signDivEmail.value,
+        lastname: signDivEmail.value,
+        birthdate: signDivBirthdate.value,
+        address: {
+            street: signDivStreet.value,
+            number: signDivNumber.value,
+            zipcode: signDivZipcode.value,
+            city: signDivCity.value,
+            country: signDivCountry.value
         }
-    ));
+    }));
 };
 
 socket.on('signUpResponse', function (data) {
