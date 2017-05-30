@@ -191,3 +191,14 @@ textarea {
   margin-top:-20px;
   text-align:right;
 }
+#top-bar{
+    width:100%;
+    height: 40px;
+    position:absolute;
+    top:0;
+    left:0;
+    background-color: rgba($form-bg,.9);
+}
+#signDiv{
+    margin-top: 100px;
+}
