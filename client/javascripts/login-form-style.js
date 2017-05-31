@@ -1,7 +1,8 @@
 /**
  * Created by haspa on 30.05.17.
  */
-$('.form').find('input, textarea').on('keyup blur focus', function (e) {
+var form = $('.form');
+form.find('input, textarea').on('keyup blur focus', function (e) {
 
     var $this = $(this),
         label = $this.prev('label');
@@ -29,7 +30,7 @@ $('.form').find('input, textarea').on('keyup blur focus', function (e) {
 
 });
 
-$('.form').submit(function (evt) {
+form.submit(function (evt) {
     evt.preventDefault();
 });
 

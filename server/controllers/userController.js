@@ -2,7 +2,7 @@
  * Created by haspa on 30.05.17.
  */
 var mongojs = require("mongojs");
-var db = mongojs('localhost:27017/financials', ['user', 'konto']);
+var db = mongojs('localhost:27017/financials', ['user', 'institut']);
 
 function UserController() {
 
